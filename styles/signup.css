@@ -1,0 +1,19 @@
+.left-container{
+    background-image: url('./../assets/images/signup.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.left-content{
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+}
+
+.right-container{
+    background-color: #F1F2F4;
+}
+.hidden{
+    display: none;
+}
