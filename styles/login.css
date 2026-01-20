@@ -24,8 +24,15 @@ body{
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    padding: 0px;
 }
 
 .right-container{
     background-color: #F2F2F4;
+}
+
+@media (min-width: 576px) {
+    .left-content-div{
+        padding: 50px;
+    }
 }
