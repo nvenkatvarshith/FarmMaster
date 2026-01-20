@@ -1,0 +1,27 @@
+body{
+    margin:0px;
+}
+
+.card-img-top{
+    border-radius: 100%;
+}
+
+
+.left-content-div{
+    background-color: rgba(25, 135, 84, 0.4); 
+    height: 100%;
+    display: flex;            
+    justify-content: center;  
+    align-items: center;      
+    flex-direction: column; 
+    color: white;
+    padding-left: 80px;
+    padding-right: 50px;
+}
+
+.left-content{
+    background-image: url("./../assets/images/1.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
