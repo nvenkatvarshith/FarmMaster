@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="./../bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./../styles/dashboard.css">
     <link rel="stylesheet" href="./../styles/assets.css">
+    <script>
+        if (!localStorage.getItem('farmer')) {
+            window.location.href = './views/farmer-login.html';
+        }
+    </script>
 </head>
 
 <body>

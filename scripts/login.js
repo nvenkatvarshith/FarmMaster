@@ -22,6 +22,7 @@ document.getElementById("login").addEventListener("click",function(){
         if(farmeremail === farmer.email){
             if(farmerPassword === farmer.password){
                 console.log("Login successful");
+                localStorage.setItem("farmer",JSON.stringify(farmer));
                 window.location.href = "./../index.html";
             } 
             else{

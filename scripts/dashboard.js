@@ -63,3 +63,8 @@ function setLabourCard(){
 }
 
 updateLabourCount();
+
+function logoutFarmer(){
+    localStorage.removeItem("farmer");
+    window.location.href="./../views/farmer-login.html";
+}

@@ -10,6 +10,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/dashboard.css">
+    <script>
+        if (!localStorage.getItem('farmer')) {
+            window.location.href = './views/farmer-login.html';
+        }
+    </script>
 </head>
 
 <body>
@@ -45,7 +50,7 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <a class="nav-link text-light" href="./views/farmer-login.html"><i
+                <button class="btn btn-outline-light" onclick="logoutFarmer()"><i
                         class="fa-solid fa-arrow-right-from-bracket me-1"></i>Logout</a>
             </div>
         </div>

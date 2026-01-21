@@ -46,3 +46,4 @@ function getTreeAge(datePlanted){
     let year = currentTimeStamp.getFullYear() - new Date(datePlanted).getFullYear();
     return year >0 ? year : currentTimeStamp.getMonth() - new Date(datePlanted).getMonth()
 }
+
