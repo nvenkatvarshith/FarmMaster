@@ -1,7 +1,20 @@
 .nav-item i{
     margin-right: 2px;
 }
+
 .carousel-item img {
   height: 500px;        
   object-fit: cover;   
+}
+
+.fa-sun{
+  color: orange;
+}
+
+#weatherContent p{
+  margin: 0px;
+}
+
+body{
+  background-color: #F6F8F5;
 }

@@ -77,22 +77,44 @@
     </div>
 
 
-
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <div class="d-flex justify-content-between p-3">
-                <h5 class="card-title text-body-secondary">Weather</h5>
-                <i class="fa-regular fa-sun"></i>
+    <div class="container-fluid mt-4">
+        <div class="row justify-content-center gap-5">
+            <div class="card col-lg-4 col-md-4 col-sm-12 mx-4" style="width: 18rem;">
+                <div class="card-body p-3">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title text-body-secondary fw-normal">Weather</h5>
+                        <i class="fa-regular fa-sun me-3 mt-1"></i>
+                    </div>
+                    <h1 class="card-subtitle">32°C</h1>
+                    <div id="weatherContent">
+    
+                    </div>
+                </div>
             </div>
-            <h6 class="card-subtitle mb-2 text-body-secondary">32*C</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <div class="card col-lg-4 col-md-4 col-sm-12 mx-4" style="width: 18rem;">
+                <div class="card-body p-3">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title text-body-secondary fw-normal">Labour</h5>
+                        <i class="fa-solid fa-people-group text-primary me-3 mt-1"></i>
+                    </div>
+                    <h1 class="card-subtitle mt-3"><span id="labour-count"></span> Active</h1>
+                    <p id="payment-pending" class="mt-3"></p>
+                </div>
+            </div>
+            <div class="card col-lg-4 col-md-4 col-sm-12 mx-4" style="width: 18rem;">
+                <div class="card-body p-3">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title text-body-secondary fw-normal">Livestock</h5>
+                        <i class="fa-solid fa-cow me-3 mt-1 text-danger"></i>
+                    </div>
+                   <h1 class="card-subtitle mt-3"><span id="hen-count"></span> Poultry</h1>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="./bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/dashboard.js"></script>
 </body>
 
 </html>
