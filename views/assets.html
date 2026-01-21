@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Master</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./../bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../styles/dashboard.css">
+    <link rel="stylesheet" href="./../styles/assets.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-success py-3 fs-6">
+        <div class="container">
+            <a class="navbar-brand text-light me-5 fs-4" href="./../index.html">AgriVision</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light active" aria-current="page" href="./../index.html"><i
+                                class="fa-brands fa-flipboard"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light" href="./operations.html"><i
+                                class="fa-solid fa-file"></i>Operations Log</a>
+                    </li>
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light" href="./assets.html"><i class="fa-solid fa-box"></i>Assets</a>
+                    </li>
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light" href="#"><i class="fa-solid fa-paw"></i>Livestock</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link text-light" href="#"><i class="fa-solid fa-book-open"></i>Knowledge Hub</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <a class="nav-link text-light" href="./farmer-login.html"><i
+                        class="fa-solid fa-arrow-right-from-bracket me-1"></i>Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid rounded main text-light text-center">
+        <div id="container-opacity">
+            <h1 id="farm-name" class="pt-4">Rajya Lakshmi Farms</h1>
+            <p>
+                📍<span id="farm-location" class="border-end pe-4">Andhra Pradesh</span>
+                <span class="ps-3 border-end pe-4">📐 Total Extent: <span id="farm-extent"></span> Acres </span>
+                <span class="ps-3">Est. <span id="farm-est"></span></span>
+            </p>
+        </div>
+    </div>
+
+
+    <div class="container mt-4 pb-4">
+        <div class="text-end">
+            <a class="nav-link text-light p-2 bg-success d-inline" href="./plantation.html">Add Plantation Details</a>
+        </div>
+        <div class="row" id="plant-details">
+
+
+        </div>
+
+        <div class="row mt-4 bg-light">
+            <div class="col-lg-6 col-sm-12">
+                <div class="border rounded p-3">
+                    <h3>Soil Health Status</h3>
+                    <p>Coming soon....</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <div class="border rounded p-3">
+                    <h3>Infrastructure & Water</h3>
+                    <p>coming soon....</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./../bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./../scripts/assets.js"></script>
+</body>
+
+</html>
