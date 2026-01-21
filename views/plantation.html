@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Master</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./../bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../styles/dashboard.css">
+    <link rel="stylesheet" href="./../styles/operations.css">
+    <script>
+        if (!localStorage.getItem('farmer')) {
+            window.location.href = './views/farmer-login.html';
+        }
+    </script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-success py-3 fs-6">
+        <div class="container">
+            <a class="navbar-brand text-light me-5 fs-4" href="./../index.html">AgriVision</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light active" aria-current="page" href="./../index.html"><i
+                                class="fa-brands fa-flipboard"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light" href="./operations.html"><i
+                                class="fa-solid fa-file"></i>Operations Log</a>
+                    </li>
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light" href="./assets.html"><i class="fa-solid fa-box"></i>Assets</a>
+                    </li>
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light" href="#"><i class="fa-solid fa-paw"></i>Livestock</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link text-light" href="#"><i class="fa-solid fa-book-open"></i>Knowledge Hub</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <button class="btn btn-outline-light" onclick="logoutFarmer()"><i
+                        class="fa-solid fa-arrow-right-from-bracket me-1"></i>Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <h3 class="border-bottom bg-light text-center">Add New Plantation Block</h3>
+    <div class="container w-lg-50 w-sm-100 my-sm-3 bg-light border rounded py-3">
+        <div>
+            <h4 class="border-bottom pb-3">Block Details & Crop Information</h4>
+            <div class="container mt-4">
+                <h6>📍Block Identity</h6>
+                <div class="row"> 
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="mb-3">
+                            <label for="block-name" class="form-label">Block Name / ID</label>
+                            <input type="text" class="form-control" id="block-name" placeholder="e.g., Lemon Block A">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="mb-3">
+                            <label for="total-area" class="form-label">Total Area (Acres)</label>
+                            <input type="number" class="form-control" id="total-area" placeholder="0.0">
+                        </div>
+                    </div>
+                </div>
+                <h6>🌱Crop Specifics</h6>
+                <div class="row mt-3">
+                    <div class="col-lg-4 col-sm-12">
+                        <label for="crop-type" class="form-label">Crop Type</label>
+                        <select id="crop-type" class="form-select form-select-sm">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="mb-3">
+                            <label for="total-count" class="form-label">Total Tree/Plant Count</label>
+                            <input type="number" class="form-control" id="total-count" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="mb-3">
+                            <label for="date-planted" class="form-label">Date Planted</label>
+                            <input type="date" class="form-control" id="total-count" placeholder="Date Planted">
+                        </div>
+                    </div>
+                </div>    
+                
+                <h6>💧Irrigation & Soil</h6>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="irrigation-method" class="form-label">Irrigation Method</label>
+                        <select id="irrigation-method" class="form-select form-select-sm">
+                            <option selected>Open this select menu</option>
+                            <option value="Drip">Drip</option>
+                            <option value="Flood">Flood</option>
+                            <option value="Sprinkler">Sprinkler</option>
+                            <option value="Rainfed">Rainfed</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="soil-type" class="form-label">Soil Type (Optional)</label>
+                        <select id="soil-type" class="form-select form-select-sm">
+                            <option selected>Open this select menu</option>
+                            <option value="Drip">Drip</option>
+                            <option value="Flood">Flood</option>
+                            <option value="Sprinkler">Sprinkler</option>
+                            <option value="Rainfed">Rainfed</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-lg-12 my-3">
+                        <label for="notes-plantation" class="form-label">Additional Notes / Remarks</label>
+                        <textarea class="form-control" id="notes-plantation" rows="3"></textarea>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="text-end">
+                <button class="btn btn-outline-success me-2" onclick="resetForm()">Cancel</button>
+                <button class="btn btn-success me-2" onclick="savePlantation()">Save Plantation Block</button>
+            </div>
+            
+
+        </div>
+
+    </div>
+
+
+    <script src="./../bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./../scripts/operations.js"></script>
+</body>
+
+</html>
