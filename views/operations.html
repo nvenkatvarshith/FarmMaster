@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Master</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./../bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../styles/dashboard.css">
+    <link rel="stylesheet" href="./../styles/operations.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-success py-3 fs-6">
+        <div class="container">
+            <a class="navbar-brand text-light me-5 fs-4" href="#">AgriVision</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light active" aria-current="page" href="./../index.html"><i
+                                class="fa-brands fa-flipboard"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light" href="#"><i class="fa-solid fa-file"></i>Operations Log</a>
+                    </li>
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light" href="#"><i class="fa-solid fa-box"></i>Assets</a>
+                    </li>
+                    <li class="nav-item me-2 pe-4 border-end border-success-subtle">
+                        <a class="nav-link text-light" href="#"><i class="fa-solid fa-paw"></i>Livestock</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link text-light" href="#"><i class="fa-solid fa-book-open"></i>Knowledge Hub</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <a class="nav-link text-light" href="./views/farmer-login.html"><i
+                        class="fa-solid fa-arrow-right-from-bracket me-1"></i>Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-3 ps-5">
+        <div class="row ps-3">
+            <div class="col-lg-8 col-md-7 col-sm-12">
+                <div class="left-container px-3 py-3">
+                    <h2>Record New Activity</h2>
+                    <ul class="nav nav-tabs mb-4" id="logTabs" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="plant-tab" data-bs-toggle="tab"
+                                data-bs-target="#plant-content" type="button">
+                                🌱 Crop & Plantation
+                            </button>
+                        </li>
+    
+                        <li class="nav-item">
+                            <button class="nav-link" id="labour-tab" data-bs-toggle="tab" data-bs-target="#labour-content"
+                                type="button">
+                                👷 Labour & wages
+                            </button>
+                        </li>
+    
+                        <li class="nav-item">
+                            <button class="nav-link" id="poultry-tab" data-bs-toggle="tab" data-bs-target="#poultry-content"
+                                type="button">
+                                🐔 Poultry & Livestock
+                            </button>
+                        </li>
+    
+                    </ul>
+    
+                    <div class="tab-content" id="logTabsContent">
+    
+                        <div class="tab-pane fade show active" id="plant-content">
+                            <div class="justify-content-between row">
+                                <div class="mb-3 col-lg-6 col-sm-12">
+                                    <label for="log-date" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="log-date" placeholder="">
+                                </div>
+                                <div class="mb-3 col-lg-6 col-sm-12">
+                                    <label for="log-plantation" class="form-label">Select Plantation</label>
+                                    <select class="form-select" id="log-plantation" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 col-lg-12">
+                                <label for="log-activity" class="form-label">Activity Type</label>
+                                <select class="form-select" id="log-activity" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-12">
+                                    <label for="log-chemical" class="form-label">Product/Chemical Name</label>
+                                    <input type="text" class="form-control" id="log-chemical" placeholder="NPK 19-19-19">
+                                </div>
+                                <div class="col-lg-4 col-sm-12">
+                                    <label for="log-chemical-quantity" class="form-label">Quantity</label>
+                                    <input type="text" class="form-control" id="log-chemical-quantity" placeholder="5">
+                                </div>
+                                <div class="col-lg-4 col-sm-12">
+                                    <label for="log-unit" class="form-label">Unit</label>
+                                    <select class="form-select" id="log-unit" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 col-lg-12 mt-3">
+                                <label for="log-application" class="form-label">Application Method</label>
+                                <select class="form-select" id="log-application" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="log-notes" class="form-label">Notes/Remarks</label>
+                                <textarea class="form-control" id="log-notes" rows="3"></textarea>
+                            </div>
+                            <button class="btn btn-success text-light text-center w-100">Save Crop Log</button>
+                        </div>
+    
+                        <div class="tab-pane fade" id="labour-content">
+                            <div class="justify-content-between row">
+                                <div class="mb-3 col-lg-6 col-sm-12">
+                                    <label for="log-date-labour" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="log-date-labour" placeholder="">
+                                </div>
+                                <div class="mb-3 col-lg-6 col-sm-12">
+                                    <label for="log-plantation-labour" class="form-label">Select Plantation</label>
+                                    <select class="form-select" id="log-plantation-labour"
+                                        aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 col-lg-12">
+                                <label for="log-activity-labour" class="form-label">Activity Type</label>
+                                <select class="form-select" id="log-activity-labour" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-12">
+                                    <label for="log-male-labour" class="form-label">Male Labour</label>
+                                    <div class="input-group" id="log-male-labour">
+                                        <input type="text" aria-label="Male Count" placeholder="Male Count"
+                                            class="form-control">
+                                        <input type="text" aria-label="Labour Price" placeholder="₹ Labour Price"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-12">
+                                    <label for="log-female-labour" class="form-label">Female Labour</label>
+                                    <div class="input-group" id="log-female-labour">
+                                        <input type="text" aria-label="Female Count" placeholder="Female Count"
+                                            class="form-control">
+                                        <input type="text" aria-label="Labour Price" placeholder="₹ Labour Price"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-lg-6 col-sm-12">
+                                    <label for="log-amount-labour" class="form-label">Total Amount</label>
+                                    <p id="log-amount-labour">₹ </p>
+                                </div>
+                                <div class="col-lg-6 col-sm-12">
+                                    <div class="mb-3 col-lg-12">
+                                       <div class="mb-3 col-lg-6 col-sm-12">
+                                            <label for="log-amount-paid" class="form-label">Amount Paid(₹)</label>
+                                            <input type="text" class="form-control" id="log-amount-paid" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-success text-light text-center w-100">Save Labour Log</button>
+                        </div>
+    
+                        <div class="tab-pane fade" id="poultry-content">
+                            <p class="my-4">Coming soon....</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-container col-lg-4 col-md-5 col-sm-12 p-5">
+                <h2>Recent Logs (Last 48h)</h2>
+                <div class="row gap-3">
+                    <div class="col-12 p-5 ps-2 pt-3 border rounded">
+                        🌱 Irrigation
+                    </div>
+                    <div class="col-12 p-5 ps-2 pt-3 border rounded">
+                        👷 Labour Payment
+                    </div>
+                    <div class="col-12 p-5 ps-2 pt-3 border rounded ">
+                       🐔 Mortality Info
+                    </div>
+                </div>
+                
+                
+            </div> 
+
+        </div>
+
+    </div>
+
+    <script src="./../bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./../scripts/operations.js"></script>
+</body>
+
+</html>
