@@ -1,0 +1,21 @@
+.banner{
+    background-image: url('./../assets/images/signup.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inner-banner{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav-pills .nav-link{
+    color: #000;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #000; 
+  background-color: rgba(25, 135, 84, 0.3);
+  border: 1px solid #000;
+  border-radius: 30px;
+}
