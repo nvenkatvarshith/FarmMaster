@@ -60,7 +60,7 @@
         <h2 class="border-bottom py-3">Add New Livestock Batch</h2>
         <div class="container bg-light border rounded py-3">
             <h4 class="border-bottom py-2">Batch Details & Flock Information</h4>
-            🐔Batch Identity
+            <h6>🐔Batch Identity</h6>
             <div class="row my-2">
                 <div class="col-lg-4 col-sm-12">
                     <label for="block-name" class="form-label">Block Name / ID</label>
@@ -68,51 +68,45 @@
                 </div>
                 <div class="col-lg-4 col-sm-12">
                     <label for="livestock-type" class="form-label">Livestock Type</label>
-                    <select id="livestock-type" class="form-select form-select-sm">
+                    <select id="livestock-type" class="form-select" onchange="populateBreed()">
                         <option selected>Open this select menu</option>
-                        <option value="Poultry">Poultry</option>
-                        <option value="Goats">Goats</option>
-                        <option value="Turkey">Turkey</option>
-                        <option value="Guinea-fowl">Guinea fowl</option>
                     </select>
                 </div>
                 <div class="col-lg-4 col-sm-12">
                     <label for="livestock-breed" class="form-label">Breed</label>
-                    <select id="livestock-breed" class="form-select form-select-sm">
+                    <select id="livestock-breed" class="form-select">
                         <option selected>Open this select menu</option>
                     </select>
                 </div>
             </div>
-            Quantity & Age
-            <div class="row mt-2">
+            <h6>Quantity & Age</h6>
+            <div class="row mt-1 mb-2">
                 <div class="col-lg-4 col-sm-12">
                     <label for="initial-count" class="form-label">Initial Count</label>
-                    <input type="number" class="form-control" id="block-name" placeholder="5">
+                    <input type="number" class="form-control" id="initial-count" placeholder="5">
                 </div>
                 <div class="col-lg-4 col-sm-12">
                     <label for="purchase-date" class="form-label">Hatch / Purchase Date</label>
-                    <input type="date" class="form-control" id="purchase-date" placeholder="Hatch / Purchase Date">
+                    <input type="date" class="form-control" id="purchase-date" placeholder="Hatch / Purchase Date" onchange="calculateCurrentAge()">
                 </div>
                 <div class="col-lg-4 col-sm-12">
-                    <label for="livestock-breed" class="form-label">Current Age (weeks)</label>
-                    <input type="number" class="form-control" id="block-name" placeholder="Auto-calc" disabled>
+                    <label for="livestock-age" class="form-label">Current Age (weeks)</label>
+                    <input type="number" class="form-control" id="livestock-age" placeholder="Auto-calc" disabled>
                 </div>
             </div>
-
-            Purpose & Source
-            <div class="row">
+            <h6>Purpose & Source</h6>
+            <div class="row mt-1 mb-2">
                 <div class="col-lg-6 col-sm-12">
                     <label for="primary-purpose" class="form-label">Primary Purpose</label>
-                    <select id="primary-purpose" class="form-select form-select-sm">
+                    <select id="primary-purpose" class="form-select">
                         <option selected>Open this select menu</option>
-                        <option value="Meat">Meat (Broiler)</option>
-                        <option value="Eggs">Eggs</option>
-                        <option value="Breeding">Breeding Stock</option>
                     </select>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                     <label for="source" class="form-label">Source / Supplier</label>
-                    <input type="text" class="form-control" id="source" placeholder="e.g., Local Hatchery">
+                    <select id="source" class="form-select">
+                        <option selected>Open this select menu</option>
+                    </select>
                 </div>
             </div>
 
@@ -124,7 +118,7 @@
             </div>
             <div class="text-end">
                 <button class="btn btn-outline-success">Cancel</button>
-                <button class="btn btn-success">Save Livestock Batch</button>
+                <button class="btn btn-success" onclick="saveLiveStockLog()">Save Livestock Batch</button>
             </div>
         </div>
     </div>
