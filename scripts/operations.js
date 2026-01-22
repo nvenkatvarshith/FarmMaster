@@ -179,3 +179,48 @@ async function saveLabourLog(){
         console.log(error);
     }
 }
+
+let cropLogs = [];
+getCropLogs();
+
+async function getCropLogs(){
+    try{
+        let response = await fetch("http://localhost:4000/cropLog",{
+            method: "GET"
+        });
+        cropLogs = await response.json();
+        updateRecentLogs();
+    }catch(error){
+        console.log(error);
+    }
+}
+
+function updateRecentLogs(){
+    cropLogs.sort();
+    document.getElementById("irrigation-last").innerHTML = `${cropLogs[cropLogs.length-1].plantation} - ${cropLogs[cropLogs.length-1].activity}: ${cropLogs[cropLogs.length-1].notes} `;
+    document.getElementById("irrigation-last-date").innerHTML = cropLogs[cropLogs.length-1].date;
+}
+
+
+let labourLogs = [];
+getLabourLogs();
+
+async function getLabourLogs(){
+    try{
+        let response = await fetch("http://localhost:4000/labourLog",{
+            method: "GET"
+        });
+        labourLogs = await response.json();
+        updateRecentLogsLabour();
+    }catch(error){
+        console.log(error);
+    }
+}
+
+function updateRecentLogsLabour(){
+    labourLogs.sort();
+    document.getElementById("labour-last").innerHTML = `${labourLogs[labourLogs.length-1].plantation} - ${labourLogs[labourLogs.length-1].activity}: <br>
+                                                            Amount Paid: ${labourLogs[labourLogs.length-1].amountPaid} <br>
+                                                            Pending: ${labourLogs[labourLogs.length-1].totalCharge - labourLogs[labourLogs.length-1].amountPaid}  `;
+    document.getElementById("labour-last-date").innerHTML = labourLogs[labourLogs.length-1].date;
+}

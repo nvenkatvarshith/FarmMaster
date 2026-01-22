@@ -35,17 +35,16 @@ async function getCurrentWeather() {
     } 
 }
 
-let logs = [];
+let labourLogs = [];
 const currentTimestamp = new Date();
 let currentDate = `${currentTimestamp.getFullYear()}-${currentTimestamp.getMonth()+1 < 10 ? '0'+ (currentTimestamp.getMonth()+1):currentTimestamp.getMonth()+1}-${currentTimestamp.getDate()}`;
 
 async function updateLabourCount(){
     try{
-        let response = await fetch("http://localhost:4000/logs",{
+        let response = await fetch("http://localhost:4000/labourLog",{
             method:"GET"
         })
-        logs = await response.json();
-        console.log(logs);
+        labourLogs = await response.json();
         setLabourCard();
     }catch(error){
         console.log(error);
@@ -53,11 +52,11 @@ async function updateLabourCount(){
 }
 
 function setLabourCard(){
-    logs.forEach(function(log){
+    labourLogs.forEach(function(log){
         if(log.date == currentDate){
-            document.getElementById("labour-count").innerHTML = log.labour_count;
-            document.getElementById("payment-pending").innerHTML = `${(log.labour_count * log.labour_cost) - log.labour_amount_paid} Pending Pay`;
-            document.getElementById("hen-count").innerHTML = log.hen_count;
+            document.getElementById("labour-count").innerHTML = `${parseInt(log.maleCount)+parseInt(log.femaleCount)}`;
+            document.getElementById("payment-pending").innerHTML = `${(log.totalCharge - log.amountPaid)} Pending Pay`;
+            document.getElementById("hen-count").innerHTML = "Coming soon....";
         }
     });
 }
