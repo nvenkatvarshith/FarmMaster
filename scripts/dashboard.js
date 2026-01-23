@@ -54,10 +54,12 @@ async function updateLabourCount(){
 function setLabourCard(){
     labourLogs.forEach(function(log){
         if(log.date == currentDate){
-            document.getElementById("labour-count").innerHTML = `${parseInt(log.maleCount)+parseInt(log.femaleCount)}`;
+            document.getElementById("labour-count").innerHTML = `${parseInt(log.maleCount)+parseInt(log.femaleCount)} Active`;
             document.getElementById("payment-pending").innerHTML = `${(log.totalCharge - log.amountPaid)} Pending Pay`;
-            document.getElementById("hen-count").innerHTML = "Coming soon....";
+        }else{
+            document.getElementById("labour-count").innerHTML = "Not yet logged";
         }
+        document.getElementById("hen-count").innerHTML = "Coming soon....";
     });
 }
 
